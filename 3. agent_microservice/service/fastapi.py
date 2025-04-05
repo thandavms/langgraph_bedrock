@@ -4,7 +4,7 @@ from pydantic import BaseModel
 import traceback
 import logging
 
-from app.agent import run_agent
+from .agent import run_agent
 
 # Configure logging
 logging.basicConfig(
@@ -84,4 +84,4 @@ async def log_requests(request: Request, call_next):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("service.fastapi:app", host="0.0.0.0", port=8000, reload=True)

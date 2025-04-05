@@ -17,7 +17,7 @@ if st.button("Generate Blog"):
         with st.spinner("Generating blog..."):
             try:
                 # Import the agent only when needed
-                from app.agent import run_agent
+                from service.agent import run_agent
                 
                 # Call the agent function
                 blog_content = run_agent(query)

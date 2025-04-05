@@ -1,0 +1,11 @@
+boto3
+fastapi>=0.104.0
+uvicorn>=0.23.2
+pydantic>=2.4.2
+langchain>=0.0.335
+langchain-core>=0.0.10
+langchain-aws
+langchain_community
+langgraph>=0.0.20
+python-dotenv>=1.0.0
+requests>=2.31.0
