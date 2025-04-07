@@ -1,0 +1,36 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: langgraph-cluster
+  region: us-west-2 
+  version: "1.28" 
+
+# Managed node groups configuration
+managedNodeGroups:
+  - name: langgraph-nodes
+    instanceType: t3.medium
+    desiredCapacity: 2
+    minSize: 1
+    maxSize: 3
+    volumeSize: 20
+    ssh:
+      allow: false # Set to true if you need SSH access
+    tags:
+      nodegroup-role: application
+
+# IAM configuration
+iam:
+  withOIDC: true # Enable OIDC provider for service accounts
+
+# VPC configuration (eksctl will create a VPC automatically)
+vpc:
+  cidr: 192.168.0.0/16
+  clusterEndpoints:
+    publicAccess: true
+    privateAccess: true
+
+# Add CloudWatch logging
+cloudWatch:
+  clusterLogging:
+    enableTypes: ["api", "audit", "authenticator", "controllerManager", "scheduler"]
