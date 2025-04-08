@@ -2,7 +2,8 @@
 
 Learning langgraph agents patterns and using it with Amazon Bedrock - Models, Knowledge bases and Agents 
 
-![alt text](image.png)
+![alt text](image-1.png)
+
 ## Prerequisites
 
 - AWS Account with appropriate permissions
